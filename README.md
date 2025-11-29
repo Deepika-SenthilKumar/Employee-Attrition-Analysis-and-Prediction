@@ -2,27 +2,23 @@ OBJECTIVE:
 	This project focuses on building a machine learning solution to predict employee attrition and deploying the insights through an interactive Streamlit dashboard for HR analysis.
 
 1.DATASET AND PREPROCESSING:
-	
 	The project utilized an employee dataset (Employee-Attrition.csv) containing various attributes:
 		(a)Numeric Features: Age, MonthlyIncome, YearsAtCompany, YearsInCurrentRole, etc.
 		(b)Categorical Features: JobRole, Department, BusinessTravel, MaritalStatus, Gender, OverTime, etc.
 		(c)Target Variable: Attrition (Yes/No or 1/0).
 
   Data Preprocessing Steps
-	
 	(a)Column Removal: Unnecessary columns like EmployeeCount, Over18, and StandardHours were dropped as they had little value for the prediction model.
 	(b)Categorical Encoding: The LabelEncoder was applied to convert categorical features (e.g., JobRole, Department) into a numeric format suitable for machine learning models.
 	(c)Feature Scaling: The StandardScaler was used on all numeric features to normalize the data, ensuring all features contribute equally to the model training process.
 	(d)Handling Imbalance: To prevent model bias towards the non-attrition class, the RandomOverSampler technique was employed to balance the number of Yes and No instances in the target 	   variable.
 
 2. FEATURE ENGINEERING:
-	
 	Two new features were created to potentially boost model performance:
 		(a)TenurePerJobLevel: Calculated as YearsAtCompany / JobLevel to measure time spent at the company relative to 		seniority.
 		(b)PromotionLag: Calculated as YearsSinceLastPromotion / YearsAtCompany to quantify the gap between promotions and overall tenure.
 
-3. MODEL TRAINING AND EVALUATION:
-	
+4. MODEL TRAINING AND EVALUATION:
 	Two different machine learning models were trained and evaluated:
 
 	(A)Logistic Regression (Baseline)
@@ -35,7 +31,7 @@ OBJECTIVE:
 		(iii)Evaluation Metrics: Accuracy, Precision, Recall, F1-score, and ROC AUC.
 		(iv)Deployment Preparation: The trained Random Forest model was saved using the pickle library for later use in the Streamlit dashboard for real-time predictions.
 
-4. STREAMLIT DASHBOARD:
+6. STREAMLIT DASHBOARD:
 	
 	An interactive web dashboard was developed using Streamlit to visualize data insights and host the prediction model.
   Dashboard Tabs:
